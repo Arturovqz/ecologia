@@ -1,0 +1,15 @@
+/* Additional app-specific styles */
+
+.App {
+  min-height: 100vh;
+}
+
+/* Prevent flash of unstyled content */
+.loading {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.loaded {
+  opacity: 1;
+}
