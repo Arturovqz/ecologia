@@ -2,16 +2,13 @@
 ::-webkit-scrollbar {
     width: 10px;
 }
-
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #003366;
     border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #FF6600;
 }
@@ -29,123 +26,116 @@ body {
     background-color: #f8f9fa;
 }
 
+/* Container general */
 .container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
 }
 
-/* Header */
+/* Header fijo */
 header {
     background-color: #003366;
-    padding: 10px 0;
+    padding: 12px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
 }
 
+/* 👉 ESTE FALTA Y ROMPÍA EL DISEÑO */
+nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
 .logo {
     color: #fff;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
 }
 
+/* Nav */
 .nav-links {
     display: flex;
-    justify-content: flex-end;
-    gap: 25px;
+    gap: 30px;
     list-style: none;
 }
-
-.nav-links li a {
-    color: #fff;
+.nav-links a {
+    color: white;
     text-decoration: none;
     font-weight: 600;
 }
-
-.nav-links li a:hover {
+.nav-links a:hover {
     color: #ff6600;
 }
 
 /* Hero */
 .hero {
-    height: 90vh;
-    background: url("https://lettucemarketing.com/wp-content/uploads/2019/09/blog-header-trash.jpg") center/cover no-repeat;
+    margin-top: 80px; /* 👉 Esto evita que el header tape el contenido */
+    height: 85vh;
+    background: url("https://lettucemarketing.com/wp-content/uploads/2019/09/blog-header-trash.jpg")
+    center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 80px;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    color: #fff;
+    font-size: 3.2rem;
+    color: white;
     font-weight: 800;
 }
 
 .hero-content p {
     font-size: 1.2rem;
     color: #e0e0e0;
-    max-width: 600px;
+    max-width: 650px;
     margin: auto;
 }
 
 .btn {
     background-color: #ff6600;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 8px;
-    text-decoration: none;
-    color: #fff;
-    margin-top: 20px;
-    display: inline-block;
+    color: white;
     font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
 }
-
 .btn:hover {
     background-color: #cc5200;
 }
 
 /* Stats */
 .stats {
-    background-color: #fff;
-    padding: 50px 0;
+    background-color: white;
+    padding: 60px 0;
 }
-
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-}
-
-.stat-item {
     text-align: center;
 }
-
-.stat-icon {
-    font-size: 2.5rem;
-}
-
 .stat-number {
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 2.2rem;
     color: #003366;
+    font-weight: 700;
 }
 
-.stat-label {
-    color: #555;
-}
-
-/* Sections */
+/* Secciones */
 .section-title {
     text-align: center;
-    padding: 50px 0 20px;
+    padding: 50px 0 30px;
 }
-
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
 }
-
 .highlight {
     color: #ff6600;
 }
@@ -154,17 +144,21 @@ header {
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 35px;
+}
+
+/* 👉 Tus imágenes estaban saltadas porque faltaba esto */
+.card-image {
+    position: relative;
 }
 
 .card {
-    background-color: #fff;
+    background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     transition: .3s;
 }
-
 .card:hover {
     transform: translateY(-10px);
 }
@@ -177,102 +171,84 @@ header {
 
 .card-badge {
     position: absolute;
-    background-color: #ff6600;
-    padding: 5px 15px;
-    color: #fff;
-    top: 15px;
-    left: 15px;
+    top: 12px;
+    left: 12px;
+    background: #ff6600;
+    padding: 6px 14px;
+    color: white;
     border-radius: 8px;
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 .card-content {
     padding: 20px;
 }
 
-.card-content h3 {
-    margin-bottom: 10px;
-}
-
-/* Gallery */
-.gallery {
-    background-color: #fff;
-    padding: 50px 0;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.gallery-item {
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.gallery-item img {
-    width: 100%;
-    display: block;
-    transition: .3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-    filter: brightness(80%);
-}
-
 /* Footer */
 footer {
     background-color: #003366;
-    color: #fff;
-    padding: 50px 0;
+    color: white;
+    padding: 60px 0;
+    margin-top: 80px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-}
-
-.footer-section h3 {
-    margin-bottom: 15px;
+    gap: 50px;
 }
 
 .footer-links {
     list-style: none;
+    padding: 0;
 }
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
 .footer-links li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
 }
-
 .footer-links li a:hover {
     color: #ff6600;
 }
 
 .social-links {
     display: flex;
-    gap: 15px;
+    gap: 10px;
 }
-
 .social-link {
+    color: white;
     font-size: 1.8rem;
-    text-decoration: none;
-    color: #fff;
 }
 
-/* Progress bar del scroll */
+/* Barra de progreso del scroll */
 .progress-bar {
     height: 5px;
-    background-color: #ff6600;
-    width: 0%;
+    background: #ff6600;
+    width: 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 2000;
 }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .nav-links {
+        display: none; /* En móviles debes usar menú hamburguesa */
+    }
+}
+
