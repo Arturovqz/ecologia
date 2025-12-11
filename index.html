@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iztapalapa Limpia - Por un Futuro Mejor">
+    <title>Iztapalapa Limpia</title>
 
     <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <!-- Barra de progreso -->
-    <div id="progressBar" class="progress-bar"></div>
+    <div class="progress-bar" id="progressBar"></div>
 
     <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
+    <header>
+        <div class="container">
             <div class="logo">🌿 Iztapalapa Limpia</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
@@ -27,15 +27,15 @@
                 <li><a href="#galeria">Galería</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
     <!-- Hero -->
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Un Iztapalapa Más Limpio es Posible</h1>
-            <p>Juntos podemos transformar nuestra comunidad en un lugar más saludable, limpio y próspero.</p>
-            <a href="#soluciones" class="btn btn-primary">Descubre Cómo Ayudar</a>
+            <p>Juntos podemos transformar nuestra comunidad en un lugar más saludable, limpio y próspero para todos.</p>
+            <a href="#soluciones" class="btn">Descubre Cómo Ayudar</a>
         </div>
     </section>
 
@@ -45,7 +45,7 @@
             <div class="stat">
                 <div class="stat-icon">🗑️</div>
                 <h3>13,000</h3>
-                <p>Toneladas de basura al día</p>
+                <p>Toneladas diarias de basura</p>
             </div>
             <div class="stat">
                 <div class="stat-icon">💧</div>
@@ -68,87 +68,55 @@
     <!-- Problema -->
     <section id="problema" class="section">
         <div class="container">
-            <h2 class="section-title">El <span>Problema</span> es Real</h2>
-            <p class="section-subtitle">
-                La acumulación de basura tiene consecuencias graves para nuestra comunidad.
-            </p>
+            <div class="section-title">
+                <h2>El <span>Problema</span> es Real</h2>
+                <p>La acumulación de basura en las calles tiene consecuencias graves para toda nuestra comunidad</p>
+            </div>
 
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/flagged/photo-1572213426852-0e4ed8f41ff6?w=800" alt="">
+                        <img src="https://images.unsplash.com/photo-1572213426852-0e4ed8f41ff6?w=800&q=80" alt="Contaminación">
                         <span class="badge badge-red">Crítico</span>
                     </div>
                     <div class="card-body">
                         <h3>Contaminación Ambiental</h3>
-                        <p>Los residuos dañan el suelo, el agua y el aire, afectando la salud pública.</p>
+                        <p>Los residuos plásticos y orgánicos contaminan el suelo, agua y aire, generando un impacto ambiental devastador.</p>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800" alt="">
+                        <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800&q=80" alt="Inundaciones">
                         <span class="badge badge-orange">Urgente</span>
                     </div>
                     <div class="card-body">
                         <h3>Inundaciones Severas</h3>
-                        <p>La basura bloquea el drenaje y causa inundaciones en temporada de lluvias.</p>
+                        <p>La basura obstruye el sistema de drenaje, causando inundaciones que dañan hogares y negocios.</p>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.pexels.com/photos/128421/pexels-photo-128421.jpeg?w=800" alt="">
+                        <img src="https://images.pexels.com/photos/128421/pexels-photo-128421.jpeg?w=800&q=80" alt="Deterioro">
                         <span class="badge badge-yellow">Importante</span>
                     </div>
                     <div class="card-body">
                         <h3>Deterioro Urbano</h3>
-                        <p>Las calles sucias afectan la imagen y calidad de vida de la alcaldía.</p>
+                        <p>Las calles sucias reducen la calidad de vida, afectan propiedades y proyectan una mala imagen.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Soluciones -->
-    <section id="soluciones" class="section light">
-        <div class="container">
-            <h2 class="section-title">Soluciones <span>Reales</span></h2>
-            <p class="section-subtitle">Acciones claras para mejorar nuestra comunidad</p>
-
-            <ul class="solutions-list">
-                <li>✔ Campañas de recolección comunitaria</li>
-                <li>✔ Separación adecuada de residuos</li>
-                <li>✔ Más contenedores por colonia</li>
-                <li>✔ Educación ambiental en escuelas</li>
-                <li>✔ Reporte ciudadano de tiraderos ilegales</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Galería -->
-    <section id="galeria" class="section">
-        <div class="container">
-            <h2 class="section-title">Galería <span>Visual</span></h2>
-
-            <div class="gallery-grid">
-                <img src="https://images.unsplash.com/photo-1556767576-bb4c4b7c8054?w=600" alt="">
-                <img src="https://images.unsplash.com/photo-1503596476-1c12a8f7e6f8?w=600" alt="">
-                <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600" alt="">
-                <img src="https://images.unsplash.com/photo-1549989476-69a92fa57c34?w=600" alt="">
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contacto" class="footer">
+    <footer id="contacto">
         <div class="container footer-grid">
-
             <div class="footer-section">
                 <h3>Iztapalapa Limpia</h3>
-                <p>Iniciativa ciudadana por un futuro más limpio para todos.</p>
+                <p>Comprometidos con el bienestar de nuestra comunidad y el medio ambiente.</p>
             </div>
-
             <div class="footer-section">
                 <h3>Enlaces</h3>
                 <ul class="footer-links">
@@ -158,11 +126,8 @@
                     <li><a href="#galeria">Galería</a></li>
                 </ul>
             </div>
-
         </div>
     </footer>
 
-    <!-- JS -->
-    <script src="script.js"></script>
 </body>
 </html>
