@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family:
+        source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@layer base {
+    :root {
+        /* Earth-inspired environmental color palette */
+        --background: 48 40% 97%;
+        --foreground: 30 15% 15%;
+        
+        /* Primary - Deep forest green (hope, nature, action) */
+        --primary: 135 45% 38%;
+        --primary-foreground: 0 0% 100%;
+        --primary-light: 135 40% 55%;
+        --primary-dark: 135 50% 28%;
+        
+        /* Secondary - Warm earth tone */
+        --secondary: 30 25% 88%;
+        --secondary-foreground: 30 15% 20%;
+        
+        /* Accent - Vibrant orange (urgency, awareness) */
+        --accent: 28 85% 58%;
+        --accent-foreground: 0 0% 100%;
+        --accent-light: 28 80% 68%;
+        
+        /* Success - Fresh green */
+        --success: 142 76% 36%;
+        --success-foreground: 0 0% 100%;
+        
+        /* Warning/Alert */
+        --warning: 38 92% 50%;
+        --warning-foreground: 30 15% 15%;
+        
+        --card: 0 0% 100%;
+        --card-foreground: 30 15% 15%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 30 15% 15%;
+        --muted: 48 20% 92%;
+        --muted-foreground: 30 10% 45%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 48 20% 85%;
+        --input: 48 20% 85%;
+        --ring: 135 45% 38%;
+        --radius: 0.75rem;
+        
+        /* Custom gradients - earth tones */
+        --gradient-hero: linear-gradient(135deg, hsl(135 45% 38%) 0%, hsl(135 40% 55%) 50%, hsl(135 45% 38%) 100%);
+        --gradient-earth: linear-gradient(180deg, hsl(48 40% 97%) 0%, hsl(48 30% 94%) 100%);
+        --gradient-accent: linear-gradient(135deg, hsl(28 85% 58%) 0%, hsl(38 80% 62%) 100%);
+        --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
+        
+        /* Shadows - organic and soft */
+        --shadow-sm: 0 2px 8px -2px hsl(135 45% 38% / 0.1);
+        --shadow-md: 0 4px 16px -4px hsl(135 45% 38% / 0.15);
+        --shadow-lg: 0 12px 32px -8px hsl(135 45% 38% / 0.2);
+        --shadow-accent: 0 8px 24px -6px hsl(28 85% 58% / 0.25);
+        
+        /* Animations */
+        --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .dark {
+        --background: 30 15% 10%;
+        --foreground: 48 20% 95%;
+        --primary: 135 45% 45%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 30 15% 18%;
+        --secondary-foreground: 48 20% 95%;
+        --accent: 28 85% 58%;
+        --accent-foreground: 0 0% 100%;
+        --card: 30 15% 12%;
+        --card-foreground: 48 20% 95%;
+        --muted: 30 15% 20%;
+        --muted-foreground: 48 10% 60%;
+        --border: 30 15% 25%;
+        --input: 30 15% 25%;
+        --ring: 135 45% 45%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+@layer components {
+    .heading-display {
+        @apply font-bold tracking-tight;
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    .gradient-text {
+        @apply bg-clip-text text-transparent;
+        background-image: var(--gradient-hero);
+    }
+    
+    .btn-primary {
+        @apply inline-flex items-center justify-center rounded-lg px-8 py-4 font-semibold transition-all duration-300;
+        @apply bg-primary text-primary-foreground hover:opacity-90 hover:scale-105;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .btn-accent {
+        @apply inline-flex items-center justify-center rounded-lg px-8 py-4 font-semibold transition-all duration-300;
+        @apply text-accent-foreground hover:opacity-90 hover:scale-105;
+        background: var(--gradient-accent);
+        box-shadow: var(--shadow-accent);
+    }
+    
+    .card-hover {
+        @apply transition-all duration-300;
+        @apply hover:scale-[1.02] hover:-translate-y-1;
+        box-shadow: var(--shadow-sm);
+    }
+    
+    .card-hover:hover {
+        box-shadow: var(--shadow-lg);
+    }
+}
+
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .animate-slide-up {
+        animation: slideUp 0.8s ease-out forwards;
+    }
+    
+    .animate-scale-in {
+        animation: scaleIn 0.5s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+    
+    .parallax {
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+}
