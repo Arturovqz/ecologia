@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iztapalapa Limpia</title>
+    <title>Iztapalapa Limpia - Por un Futuro Mejor</title>
 
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Fuentes modernas -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <!-- CSS externo -->
     <link rel="stylesheet" href="styles.css">
@@ -18,7 +18,7 @@
 
     <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container header-container">
             <div class="logo">🌿 Iztapalapa Limpia</div>
             <ul class="nav-links">
                 <li><a href="#inicio">Inicio</a></li>
@@ -34,8 +34,8 @@
     <section id="inicio" class="hero">
         <div class="hero-content">
             <h1>Un Iztapalapa Más Limpio es Posible</h1>
-            <p>Juntos podemos transformar nuestra comunidad en un lugar más saludable, limpio y próspero para todos.</p>
-            <a href="#soluciones" class="btn">Descubre Cómo Ayudar</a>
+            <p>Transformemos nuestra comunidad en un lugar más saludable, limpio y próspero para todos.</p>
+            <a href="#soluciones" class="btn btn-primary">Descubre Cómo Ayudar</a>
         </div>
     </section>
 
@@ -45,7 +45,7 @@
             <div class="stat">
                 <div class="stat-icon">🗑️</div>
                 <h3>13,000</h3>
-                <p>Toneladas diarias de basura</p>
+                <p>Toneladas de basura al día</p>
             </div>
             <div class="stat">
                 <div class="stat-icon">💧</div>
@@ -54,7 +54,7 @@
             </div>
             <div class="stat">
                 <div class="stat-icon">🏘️</div>
-                <h3>8 de 10</h3>
+                <h3>8/10</h3>
                 <p>Calles afectadas</p>
             </div>
             <div class="stat">
@@ -69,19 +69,19 @@
     <section id="problema" class="section">
         <div class="container">
             <div class="section-title">
-                <h2>El <span>Problema</span> es Real</h2>
-                <p>La acumulación de basura en las calles tiene consecuencias graves para toda nuestra comunidad</p>
+                <h2>El <span class="highlight">Problema</span> es Real</h2>
+                <p>La acumulación de basura en las calles afecta nuestra comunidad de múltiples formas.</p>
             </div>
 
             <div class="cards-grid">
                 <div class="card">
                     <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1572213426852-0e4ed8f41ff6?w=800&q=80" alt="Contaminación">
+                        <img src="https://images.unsplash.com/flagged/photo-1572213426852-0e4ed8f41ff6?w=800&q=80" alt="Contaminación">
                         <span class="badge badge-red">Crítico</span>
                     </div>
                     <div class="card-body">
                         <h3>Contaminación Ambiental</h3>
-                        <p>Los residuos plásticos y orgánicos contaminan el suelo, agua y aire, generando un impacto ambiental devastador.</p>
+                        <p>Los residuos contaminan suelo, agua y aire, generando un impacto devastador en la salud.</p>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                     </div>
                     <div class="card-body">
                         <h3>Inundaciones Severas</h3>
-                        <p>La basura obstruye el sistema de drenaje, causando inundaciones que dañan hogares y negocios.</p>
+                        <p>La basura obstruye drenajes, causando inundaciones que afectan hogares y negocios.</p>
                     </div>
                 </div>
 
@@ -103,7 +103,7 @@
                     </div>
                     <div class="card-body">
                         <h3>Deterioro Urbano</h3>
-                        <p>Las calles sucias reducen la calidad de vida, afectan propiedades y proyectan una mala imagen.</p>
+                        <p>Calles sucias reducen calidad de vida, afectan propiedades y la imagen de la alcaldía.</p>
                     </div>
                 </div>
             </div>
@@ -128,6 +128,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- JS Barra de progreso -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
 
 </body>
 </html>
