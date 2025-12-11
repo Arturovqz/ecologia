@@ -1,0 +1,1718 @@
+"<!DOCTYPE html>
+<html lang=\"es\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>No Más Basura en Nuestras Calles - Iztapalapa</title>
+    <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap\" rel=\"stylesheet\">
+    <style>
+        /* Reset y Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colores ambientales tierra */
+            --background: hsl(48, 40%, 97%);
+            --foreground: hsl(30, 15%, 15%);
+            --primary: hsl(135, 45%, 38%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --accent: hsl(28, 85%, 58%);
+            --accent-foreground: hsl(0, 0%, 100%);
+            --success: hsl(142, 76%, 36%);
+            --card: hsl(0, 0%, 100%);
+            --muted: hsl(48, 20%, 92%);
+            --muted-foreground: hsl(30, 10%, 45%);
+            --border: hsl(48, 20%, 85%);
+            --destructive: hsl(0, 84%, 60%);
+            --warning: hsl(38, 92%, 50%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: url('https://images.unsplash.com/photo-1638890814376-5888af1b052f?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 5rem 1rem;
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+
+        .alert-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background-color: rgba(237, 142, 74, 0.2);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(237, 142, 74, 0.3);
+            color: white;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title-accent {
+            display: block;
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #e5e7eb;
+            margin-bottom: 3rem;
+            line-height: 1.75;
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .hero-card-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            background: rgba(237, 142, 74, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .btn-accent {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--accent) 0%, hsl(38, 80%, 62%) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px -6px rgba(237, 142, 74, 0.25);
+            margin-top: 2rem;
+        }
+
+        .btn-accent:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px -4px rgba(95, 156, 63, 0.15);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, 10px); }
+        }
+
+        .mouse-scroll {
+            width: 1.5rem;
+            height: 2.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 1rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .mouse-wheel {
+            width: 0.25rem;
+            height: 0.75rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 0.25rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--background) 0%, var(--muted) 50%, var(--background) 100%);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title-accent {
+            display: block;
+            color: var(--accent);
+            margin-top: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px -2px rgba(95, 156, 63, 0.1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px -8px rgba(95, 156, 63, 0.2);
+        }
+
+        .stat-icon {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(95, 156, 63, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .stat-card:hover .stat-icon {
+            background: rgba(95, 156, 63, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-sublabel {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Problem Section */
+        .problem-section {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px -2px rgba(95, 156, 63, 0.1);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px -8px rgba(95, 156, 63, 0.2);
+        }
+
+        .problem-image {
+            position: relative;
+            height: 16rem;
+            overflow: hidden;
+        }
+
+        .problem-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .problem-card:hover .problem-image img {
+            transform: scale(1.1);
+        }
+
+        .problem-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .impact-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            backdrop-filter: blur(8px);
+        }
+
+        .impact-critical {
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+        }
+
+        .impact-high {
+            background: rgba(237, 142, 74, 0.9);
+            color: white;
+        }
+
+        .impact-medium {
+            background: rgba(251, 191, 36, 0.9);
+            color: hsl(30, 15%, 15%);
+        }
+
+        .problem-content {
+            padding: 1.5rem;
+        }
+
+        .problem-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .problem-description {
+            color: var(--muted-foreground);
+            line-height: 1.75;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, hsl(48, 40%, 97%) 0%, hsl(48, 30%, 94%) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-section::before,
+        .impact-section::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.2;
+        }
+
+        .impact-section::before {
+            top: 0;
+            left: 0;
+            width: 16rem;
+            height: 16rem;
+            background: var(--primary);
+        }
+
+        .impact-section::after {
+            bottom: 0;
+            right: 0;
+            width: 24rem;
+            height: 24rem;
+            background: var(--accent);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px -2px rgba(95, 156, 63, 0.1);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px -8px rgba(95, 156, 63, 0.2);
+        }
+
+        .impact-icon-box {
+            flex-shrink: 0;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover .impact-icon-box {
+            transform: scale(1.1);
+        }
+
+        .cta-box {
+            background: var(--card);
+            border: 2px solid rgba(95, 156, 63, 0.2);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-icon {
+            width: 5rem;
+            height: 5rem;
+            background: rgba(95, 156, 63, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            padding: 5rem 0;
+            background: var(--background);
+        }
+
+        .solutions-header {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .solutions-header {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .solutions-image {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .solutions-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .solutions-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(95, 156, 63, 0.4) 100%);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .solution-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px -2px rgba(95, 156, 63, 0.1);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 32px -8px rgba(95, 156, 63, 0.2);
+        }
+
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .solution-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .solution-description {
+            color: var(--muted-foreground);
+            line-height: 1.75;
+        }
+
+        .cta-banner {
+            display: inline-flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            background: rgba(95, 156, 63, 0.05);
+            border: 1px solid rgba(95, 156, 63, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 640px) {
+            .cta-banner {
+                flex-direction: row;
+            }
+        }
+
+        /* Action Section */
+        .action-section {
+            padding: 5rem 0;
+            background: linear-gradient(180deg, var(--background) 0%, var(--muted) 50%, var(--background) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-section::before,
+        .action-section::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .action-section::before {
+            top: 25%;
+            left: -8rem;
+            width: 24rem;
+            height: 24rem;
+            background: var(--primary);
+        }
+
+        .action-section::after {
+            bottom: 25%;
+            right: -8rem;
+            width: 24rem;
+            height: 24rem;
+            background: var(--accent);
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 1024px) {
+            .action-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .form-card {
+            background: var(--card);
+            border: 2px solid rgba(95, 156, 63, 0.2);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10rem;
+            height: 10rem;
+            background: var(--primary);
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.1;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            background: var(--background);
+            color: var(--foreground);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(95, 156, 63, 0.1);
+        }
+
+        .form-note {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .success-icon {
+            width: 5rem;
+            height: 5rem;
+            background: rgba(34, 197, 94, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .action-image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            height: 18rem;
+            margin-bottom: 2rem;
+        }
+
+        .action-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stats-mini-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stats-mini-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .stats-mini-number {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-box {
+            background: rgba(95, 156, 63, 0.05);
+            border: 1px solid rgba(95, 156, 63, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .info-box h4 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .info-box ul {
+            list-style: none;
+        }
+
+        .info-box li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 0.75rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(95, 156, 63, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(95, 156, 63, 0.2);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+            margin-bottom: 0.75rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .newsletter-input {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background: var(--background);
+            color: var(--foreground);
+            font-size: 0.875rem;
+        }
+
+        .newsletter-button {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            opacity: 0.9;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-bottom-links a {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Icons SVG */
+        .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .icon-lg {
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .icon-xl {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast-success {
+            border-left: 4px solid var(--success);
+        }
+
+        .toast-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--success);
+        }
+
+        .toast-content h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .toast-content p {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+
+        /* Responsive */
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-title {
+                font-size: 4.5rem;
+            }
+            .section-title h2 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class=\"hero-section\">
+        <div class=\"hero-overlay\"></div>
+        <div class=\"hero-content\">
+            <div class=\"alert-badge\">
+                <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                    <circle cx=\"12\" cy=\"12\" r=\"10\"></circle>
+                    <line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line>
+                    <line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></line>
+                </svg>
+                <span>Alerta Ambiental - Iztapalapa</span>
+            </div>
+
+            <h1 class=\"hero-title\">
+                No Más Basura en
+                <span class=\"hero-title-accent\">Nuestras Calles</span>
+            </h1>
+
+            <p class=\"hero-subtitle\">
+                Cada envoltorio, cada botella, cada residuo que tiramos contamina nuestro hogar. 
+                Es hora de actuar por un Iztapalapa más limpio.
+            </p>
+
+            <div class=\"hero-cards\">
+                <div class=\"hero-card\">
+                    <div class=\"hero-card-icon\">
+                        <svg class=\"icon-lg\" style=\"color: white;\" viewBox=\"0 0 24 24\">
+                            <polyline points=\"3 6 5 6 21 6\"></polyline>
+                            <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"></path>
+                            <line x1=\"10\" y1=\"11\" x2=\"10\" y2=\"17\"></line>
+                            <line x1=\"14\" y1=\"11\" x2=\"14\" y2=\"17\"></line>
+                        </svg>
+                    </div>
+                    <p style=\"color: white; font-weight: 600; margin-bottom: 0.5rem;\">Calles Sucias</p>
+                    <p style=\"font-size: 0.875rem; color: #e5e7eb;\">Residuos acumulados afean nuestra comunidad</p>
+                </div>
+
+                <div class=\"hero-card\">
+                    <div class=\"hero-card-icon\">
+                        <svg class=\"icon-lg\" style=\"color: white;\" viewBox=\"0 0 24 24\">
+                            <path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"></path>
+                        </svg>
+                    </div>
+                    <p style=\"color: white; font-weight: 600; margin-bottom: 0.5rem;\">Coladeras Tapadas</p>
+                    <p style=\"font-size: 0.875rem; color: #e5e7eb;\">La basura provoca inundaciones severas</p>
+                </div>
+
+                <div class=\"hero-card\">
+                    <div class=\"hero-card-icon\">
+                        <svg class=\"icon-lg\" style=\"color: white;\" viewBox=\"0 0 24 24\">
+                            <circle cx=\"12\" cy=\"12\" r=\"10\"></circle>
+                            <line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"12\"></line>
+                            <line x1=\"12\" y1=\"16\" x2=\"12.01\" y2=\"16\"></line>
+                        </svg>
+                    </div>
+                    <p style=\"color: white; font-weight: 600; margin-bottom: 0.5rem;\">Medio Ambiente</p>
+                    <p style=\"font-size: 0.875rem; color: #e5e7eb;\">Daño irreversible a nuestro ecosistema</p>
+                </div>
+            </div>
+
+            <a href=\"#actuar\" class=\"btn-accent\">
+                Únete al Cambio
+                <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                    <line x1=\"5\" y1=\"12\" x2=\"19\" y2=\"12\"></line>
+                    <polyline points=\"12 5 19 12 12 19\"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        <div class=\"scroll-indicator\">
+            <div class=\"mouse-scroll\">
+                <div class=\"mouse-wheel\"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class=\"stats-section\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2>
+                    La Realidad de
+                    <span class=\"section-title-accent\">Nuestro Problema</span>
+                </h2>
+                <p class=\"section-subtitle\">
+                    Cifras alarmantes que demuestran la urgencia de actuar ahora
+                </p>
+            </div>
+
+            <div class=\"stats-grid\">
+                <div class=\"stat-card\">
+                    <div class=\"stat-icon\">
+                        <svg class=\"icon-xl\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <polyline points=\"3 6 5 6 21 6\"></polyline>
+                            <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"></path>
+                        </svg>
+                    </div>
+                    <p class=\"stat-number\">13,000</p>
+                    <p class=\"stat-label\">Toneladas de basura</p>
+                    <p class=\"stat-sublabel\">generadas diariamente en Iztapalapa</p>
+                </div>
+
+                <div class=\"stat-card\">
+                    <div class=\"stat-icon\">
+                        <svg class=\"icon-xl\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"></path>
+                        </svg>
+                    </div>
+                    <p class=\"stat-number\">60%</p>
+                    <p class=\"stat-label\">Coladeras obstruidas</p>
+                    <p class=\"stat-sublabel\">por residuos sólidos en época de lluvias</p>
+                </div>
+
+                <div class=\"stat-card\">
+                    <div class=\"stat-icon\">
+                        <svg class=\"icon-xl\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\"></polyline>
+                            <polyline points=\"17 6 23 6 23 12\"></polyline>
+                        </svg>
+                    </div>
+                    <p class=\"stat-number\">45%</p>
+                    <p class=\"stat-label\">Aumento en enfermedades</p>
+                    <p class=\"stat-sublabel\">relacionadas con contaminación</p>
+                </div>
+
+                <div class=\"stat-card\">
+                    <div class=\"stat-icon\">
+                        <svg class=\"icon-xl\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"></path>
+                            <line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"></line>
+                            <line x1=\"12\" y1=\"17\" x2=\"12.01\" y2=\"17\"></line>
+                        </svg>
+                    </div>
+                    <p class=\"stat-number\">8 de 10</p>
+                    <p class=\"stat-label\">Calles afectadas</p>
+                    <p class=\"stat-sublabel\">por acumulación de residuos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class=\"problem-section\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2>
+                    ¿Por Qué es un
+                    <span style=\"color: var(--primary);\">Problema Grave?</span>
+                </h2>
+                <p class=\"section-subtitle\">
+                    La basura en las calles no es solo un problema estético, tiene consecuencias devastadoras
+                </p>
+            </div>
+
+            <div class=\"problem-grid\">
+                <div class=\"problem-card\">
+                    <div class=\"problem-image\">
+                        <img src=\"https://images.unsplash.com/flagged/photo-1572213426852-0e4ed8f41ff6?w=800&q=80\" alt=\"Contaminación Ambiental\">
+                        <div class=\"problem-overlay\"></div>
+                        <span class=\"impact-badge impact-high\">Impacto Alto</span>
+                    </div>
+                    <div class=\"problem-content\">
+                        <h3 class=\"problem-title\">Contaminación Ambiental</h3>
+                        <p class=\"problem-description\">
+                            Los residuos plásticos y orgánicos contaminan el suelo, agua y aire, afectando la salud de todos los habitantes de Iztapalapa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"problem-card\">
+                    <div class=\"problem-image\">
+                        <img src=\"https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800&q=80\" alt=\"Inundaciones\">
+                        <div class=\"problem-overlay\"></div>
+                        <span class=\"impact-badge impact-critical\">Impacto Crítico</span>
+                    </div>
+                    <div class=\"problem-content\">
+                        <h3 class=\"problem-title\">Inundaciones por Coladeras Tapadas</h3>
+                        <p class=\"problem-description\">
+                            La basura obstruye el sistema de drenaje, causando inundaciones severas que dañan hogares y negocios durante la temporada de lluvias.
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"problem-card\">
+                    <div class=\"problem-image\">
+                        <img src=\"https://images.pexels.com/photos/128421/pexels-photo-128421.jpeg?w=800&q=80\" alt=\"Deterioro Urbano\">
+                        <div class=\"problem-overlay\"></div>
+                        <span class=\"impact-badge impact-medium\">Impacto Medio</span>
+                    </div>
+                    <div class=\"problem-content\">
+                        <h3 class=\"problem-title\">Deterioro de la Imagen Urbana</h3>
+                        <p class=\"problem-description\">
+                            Las calles llenas de basura afean nuestra comunidad, reducen el valor de las propiedades y generan una mala impresión de Iztapalapa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class=\"impact-section\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2>
+                    Consecuencias en
+                    <span class=\"section-title-accent\">Nuestra Comunidad</span>
+                </h2>
+                <p class=\"section-subtitle\">
+                    Cada día que pasa sin actuar, el daño se multiplica
+                </p>
+            </div>
+
+            <div class=\"impact-grid\">
+                <div class=\"impact-card\">
+                    <div class=\"impact-icon-box\" style=\"background: rgba(239, 68, 68, 0.2);\">
+                        <svg class=\"icon-lg\" style=\"color: var(--destructive);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z\"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class=\"problem-title\">Salud Pública</h3>
+                        <p class=\"problem-description\">
+                            Los residuos atraen plagas y generan enfermedades respiratorias, gastrointestinales y de la piel.
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"impact-card\">
+                    <div class=\"impact-icon-box\" style=\"background: rgba(237, 142, 74, 0.2);\">
+                        <svg class=\"icon-lg\" style=\"color: var(--accent);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"></path>
+                            <polyline points=\"9 22 9 12 15 12 15 22\"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class=\"problem-title\">Viviendas y Negocios</h3>
+                        <p class=\"problem-description\">
+                            Las inundaciones causan pérdidas económicas millonarias y daños irreparables en propiedades.
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"impact-card\">
+                    <div class=\"impact-icon-box\" style=\"background: rgba(95, 156, 63, 0.2);\">
+                        <svg class=\"icon-lg\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M12 2v20M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z\"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class=\"problem-title\">Ecosistema Local</h3>
+                        <p class=\"problem-description\">
+                            La contaminación destruye áreas verdes y afecta la fauna urbana de nuestra alcaldía.
+                        </p>
+                    </div>
+                </div>
+
+                <div class=\"impact-card\">
+                    <div class=\"impact-icon-box\" style=\"background: rgba(251, 191, 36, 0.2);\">
+                        <svg class=\"icon-lg\" style=\"color: var(--warning);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\"></path>
+                            <circle cx=\"9\" cy=\"7\" r=\"4\"></circle>
+                            <path d=\"M23 21v-2a4 4 0 0 0-3-3.87\"></path>
+                            <path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class=\"problem-title\">Calidad de Vida</h3>
+                        <p class=\"problem-description\">
+                            El deterioro urbano genera estrés, inseguridad y reduce el bienestar de las familias.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class=\"cta-box\">
+                <div class=\"cta-icon\">
+                    <svg class=\"icon-xl\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                        <path d=\"M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z\"></path>
+                        <line x1=\"12\" y1=\"9\" x2=\"12\" y2=\"13\"></line>
+                        <line x1=\"12\" y1=\"17\" x2=\"12.01\" y2=\"17\"></line>
+                    </svg>
+                </div>
+                <h3 style=\"font-size: 2rem; margin-bottom: 1rem;\">El Cambio Empieza Contigo</h3>
+                <p class=\"section-subtitle\" style=\"margin-bottom: 0;\">
+                    No podemos seguir ignorando esta realidad. Cada acción cuenta, cada persona importa. 
+                    Juntos podemos transformar Iztapalapa.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class=\"solutions-section\">
+        <div class=\"container\">
+            <div class=\"solutions-header\">
+                <div>
+                    <h2 style=\"font-size: 2.5rem; margin-bottom: 1.5rem;\">
+                        Soluciones que
+                        <span style=\"display: block; color: var(--primary); margin-top: 0.5rem;\">Están en tus Manos</span>
+                    </h2>
+                    <p class=\"section-subtitle\" style=\"margin-bottom: 1.5rem;\">
+                        No necesitas superpoderes para hacer la diferencia. Pequeñas acciones diarias 
+                        pueden transformar nuestra comunidad. Aquí te mostramos cómo.
+                    </p>
+                    <div class=\"check-item\">
+                        <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                            <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path>
+                            <polyline points=\"22 4 12 14.01 9 11.01\"></polyline>
+                        </svg>
+                        <span>Fáciles de implementar</span>
+                    </div>
+                    <div class=\"check-item\">
+                        <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                            <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path>
+                            <polyline points=\"22 4 12 14.01 9 11.01\"></polyline>
+                        </svg>
+                        <span>Resultados inmediatos</span>
+                    </div>
+                    <div class=\"check-item\">
+                        <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                            <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path>
+                            <polyline points=\"22 4 12 14.01 9 11.01\"></polyline>
+                        </svg>
+                        <span>Impacto duradero</span>
+                    </div>
+                </div>
+
+                <div class=\"solutions-image\">
+                    <img src=\"https://images.unsplash.com/photo-1597700112072-fa3c1d930655?w=800&q=80\" alt=\"Voluntarios\">
+                    <div class=\"solutions-image-overlay\"></div>
+                </div>
+            </div>
+
+            <div class=\"solutions-grid\">
+                <div class=\"solution-card\">
+                    <div class=\"solution-icon\">🗑️</div>
+                    <h3 class=\"solution-title\">Usa los Botes de Basura</h3>
+                    <p class=\"solution-description\">
+                        Siempre deposita tus residuos en los contenedores designados. Si no hay uno cerca, guarda tu basura hasta encontrar uno.
+                    </p>
+                </div>
+
+                <div class=\"solution-card\">
+                    <div class=\"solution-icon\">♻️</div>
+                    <h3 class=\"solution-title\">Separa tus Residuos</h3>
+                    <p class=\"solution-description\">
+                        Clasifica tu basura en orgánicos, inorgánicos y reciclables. Facilita el proceso de recolección y reciclaje.
+                    </p>
+                </div>
+
+                <div class=\"solution-card\">
+                    <div class=\"solution-icon\">🌱</div>
+                    <h3 class=\"solution-title\">Reduce el Uso de Plástico</h3>
+                    <p class=\"solution-description\">
+                        Lleva tus propias bolsas reutilizables al hacer compras. Evita productos con empaques excesivos.
+                    </p>
+                </div>
+
+                <div class=\"solution-card\">
+                    <div class=\"solution-icon\">📱</div>
+                    <h3 class=\"solution-title\">Reporta Basureros Clandestinos</h3>
+                    <p class=\"solution-description\">
+                        Si ves acumulación de basura en la vía pública, repórtalo a las autoridades locales de Iztapalapa.
+                    </p>
+                </div>
+
+                <div class=\"solution-card\">
+                    <div class=\"solution-icon\">🤝</div>
+                    <h3 class=\"solution-title\">Participa en Jornadas de Limpieza</h3>
+                    <p class=\"solution-description\">
+                        Únete a las brigadas comunitarias que organizan limpiezas en calles, parques y espacios públicos.
+                    </p>
+                </div>
+
+                <div class=\"solution-card\">
+                    <div class=\"solution-icon\">👨‍👩‍👧‍👦</div>
+                    <h3 class=\"solution-title\">Educa a tu Familia y Vecinos</h3>
+                    <p class=\"solution-description\">
+                        Comparte estos consejos con tu comunidad. El cambio empieza con la educación y el ejemplo.
+                    </p>
+                </div>
+            </div>
+
+            <div style=\"text-align: center;\">
+                <div class=\"cta-banner\">
+                    <div style=\"text-align: left;\">
+                        <p style=\"font-size: 1.125rem; font-weight: 700; margin-bottom: 0.25rem;\">
+                            ¿Listo para hacer la diferencia?
+                        </p>
+                        <p style=\"color: var(--muted-foreground);\">
+                            Empieza hoy mismo con estas acciones
+                        </p>
+                    </div>
+                    <a href=\"#actuar\" class=\"btn-primary\">Comprométete Ahora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Section -->
+    <section id=\"actuar\" class=\"action-section\">
+        <div class=\"container\">
+            <div class=\"section-title\">
+                <h2>
+                    Es Hora de
+                    <span class=\"section-title-accent\">Tomar Acción</span>
+                </h2>
+                <p class=\"section-subtitle\">
+                    Comprométete hoy con un Iztapalapa más limpio. Tu acción inspira a otros.
+                </p>
+            </div>
+
+            <div class=\"action-grid\">
+                <div class=\"form-card\">
+                    <h3 style=\"font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;\">
+                        Firma tu Compromiso Ambiental
+                    </h3>
+                    
+                    <form id=\"commitmentForm\" style=\"position: relative; z-index: 1;\">
+                        <div class=\"form-group\">
+                            <label class=\"form-label\" for=\"nombre\">Tu Nombre *</label>
+                            <input 
+                                type=\"text\" 
+                                id=\"nombre\" 
+                                name=\"nombre\" 
+                                class=\"form-input\" 
+                                placeholder=\"Escribe tu nombre completo\"
+                                required
+                            >
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label class=\"form-label\" for=\"email\">Correo Electrónico *</label>
+                            <input 
+                                type=\"email\" 
+                                id=\"email\" 
+                                name=\"email\" 
+                                class=\"form-input\" 
+                                placeholder=\"tu@email.com\"
+                                required
+                            >
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label class=\"form-label\" for=\"colonia\">Colonia de Iztapalapa</label>
+                            <input 
+                                type=\"text\" 
+                                id=\"colonia\" 
+                                name=\"colonia\" 
+                                class=\"form-input\" 
+                                placeholder=\"Ej: Santa Cruz Meyehualco\"
+                            >
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label class=\"form-label\" for=\"compromiso\">Mi Compromiso Principal *</label>
+                            <select id=\"compromiso\" name=\"compromiso\" class=\"form-select\" required>
+                                <option value=\"\">Selecciona una opción</option>
+                                <option value=\"botes\">Siempre usar los botes de basura</option>
+                                <option value=\"separar\">Separar mis residuos correctamente</option>
+                                <option value=\"plastico\">Reducir el uso de plásticos</option>
+                                <option value=\"jornadas\">Participar en jornadas de limpieza</option>
+                                <option value=\"educar\">Educar a mi familia y vecinos</option>
+                            </select>
+                        </div>
+
+                        <button type=\"submit\" class=\"btn-accent\" style=\"width: 100%; justify-content: center;\">
+                            <span>Firmar Compromiso</span>
+                            <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                                <line x1=\"22\" y1=\"2\" x2=\"11\" y2=\"13\"></line>
+                                <polygon points=\"22 2 15 22 11 13 2 9 22 2\"></polygon>
+                            </svg>
+                        </button>
+
+                        <p class=\"form-note\">
+                            * Al firmar, te unes a cientos de vecinos comprometidos con el cambio
+                        </p>
+                    </form>
+
+                    <div id=\"successMessage\" class=\"success-message\" style=\"display: none;\">
+                        <div class=\"success-icon\">
+                            <svg class=\"icon-xl\" style=\"color: var(--success);\" viewBox=\"0 0 24 24\">
+                                <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path>
+                                <polyline points=\"22 4 12 14.01 9 11.01\"></polyline>
+                            </svg>
+                        </div>
+                        <h4 style=\"font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;\">
+                            ¡Gracias por tu Compromiso!
+                        </h4>
+                        <p style=\"color: var(--muted-foreground);\">
+                            Juntos estamos construyendo un Iztapalapa más limpio.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class=\"action-image\">
+                        <img src=\"https://images.unsplash.com/photo-1758599669327-83d310882929?w=800&q=80\" alt=\"Comunidad\">
+                    </div>
+
+                    <div class=\"stats-mini-grid\">
+                        <div class=\"stats-mini-card\">
+                            <p class=\"stats-mini-number\" style=\"color: var(--primary);\">2,847</p>
+                            <p style=\"font-size: 0.875rem; color: var(--muted-foreground);\">Vecinos Comprometidos</p>
+                        </div>
+                        <div class=\"stats-mini-card\">
+                            <p class=\"stats-mini-number\" style=\"color: var(--accent);\">52</p>
+                            <p style=\"font-size: 0.875rem; color: var(--muted-foreground);\">Colonias Participando</p>
+                        </div>
+                    </div>
+
+                    <div class=\"info-box\">
+                        <h4>
+                            <svg class=\"icon\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                                <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path>
+                                <polyline points=\"22 4 12 14.01 9 11.01\"></polyline>
+                            </svg>
+                            ¿Qué Obtienes al Comprometerte?
+                        </h4>
+                        <ul>
+                            <li>
+                                <span style=\"color: var(--primary); margin-top: 0.25rem;\">•</span>
+                                <span>Notificaciones sobre jornadas de limpieza en tu colonia</span>
+                            </li>
+                            <li>
+                                <span style=\"color: var(--primary); margin-top: 0.25rem;\">•</span>
+                                <span>Guías prácticas para reducir tu huella ambiental</span>
+                            </li>
+                            <li>
+                                <span style=\"color: var(--primary); margin-top: 0.25rem;\">•</span>
+                                <span>Acceso a recursos educativos para toda la familia</span>
+                            </li>
+                            <li>
+                                <span style=\"color: var(--primary); margin-top: 0.25rem;\">•</span>
+                                <span>Reconocimiento como líder ambiental en tu comunidad</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class=\"footer\">
+        <div class=\"container\">
+            <div class=\"footer-grid\">
+                <div class=\"footer-section\">
+                    <h3 class=\"footer-title\">Iztapalapa Limpia</h3>
+                    <p class=\"footer-description\">
+                        Una iniciativa ciudadana para concientizar sobre la importancia de mantener nuestras calles libres de basura.
+                    </p>
+                    <div class=\"social-links\">
+                        <a href=\"#\" class=\"social-link\" aria-label=\"Facebook\">
+                            <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                                <path d=\"M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z\"></path>
+                            </svg>
+                        </a>
+                        <a href=\"#\" class=\"social-link\" aria-label=\"Twitter\">
+                            <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                                <path d=\"M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z\"></path>
+                            </svg>
+                        </a>
+                        <a href=\"#\" class=\"social-link\" aria-label=\"Instagram\">
+                            <svg class=\"icon\" viewBox=\"0 0 24 24\">
+                                <rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"5\" ry=\"5\"></rect>
+                                <path d=\"M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z\"></path>
+                                <line x1=\"17.5\" y1=\"6.5\" x2=\"17.51\" y2=\"6.5\"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class=\"footer-section\">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class=\"footer-links\">
+                        <li><a href=\"#\">Sobre el Proyecto</a></li>
+                        <li><a href=\"#\">Cómo Participar</a></li>
+                        <li><a href=\"#\">Jornadas de Limpieza</a></li>
+                        <li><a href=\"#\">Recursos Educativos</a></li>
+                        <li><a href=\"#\">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+
+                <div class=\"footer-section\">
+                    <h4>Contacto</h4>
+                    <div class=\"contact-item\">
+                        <svg class=\"icon\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z\"></path>
+                            <circle cx=\"12\" cy=\"10\" r=\"3\"></circle>
+                        </svg>
+                        <span>Alcaldía Iztapalapa<br>Ciudad de México</span>
+                    </div>
+                    <div class=\"contact-item\">
+                        <svg class=\"icon\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"></path>
+                        </svg>
+                        <span>55-1234-5678</span>
+                    </div>
+                    <div class=\"contact-item\">
+                        <svg class=\"icon\" style=\"color: var(--primary);\" viewBox=\"0 0 24 24\">
+                            <path d=\"M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z\"></path>
+                            <polyline points=\"22,6 12,13 2,6\"></polyline>
+                        </svg>
+                        <span>contacto@iztapalapa-limpia.mx</span>
+                    </div>
+                </div>
+
+                <div class=\"footer-section\">
+                    <h4>Mantente Informado</h4>
+                    <p class=\"footer-description\">
+                        Recibe noticias sobre jornadas de limpieza y eventos comunitarios.
+                    </p>
+                    <form class=\"newsletter-form\" onsubmit=\"return false;\">
+                        <input 
+                            type=\"email\" 
+                            placeholder=\"Tu correo electrónico\" 
+                            class=\"newsletter-input\"
+                        >
+                        <button type=\"submit\" class=\"newsletter-button\">Suscribirme</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class=\"footer-bottom\">
+                <p class=\"copyright\">
+                    © <span id=\"currentYear\"></span> Iztapalapa Limpia. Todos los derechos reservados.
+                </p>
+                <div class=\"footer-bottom-links\">
+                    <a href=\"#\">Privacidad</a>
+                    <a href=\"#\">Términos</a>
+                    <a href=\"#\">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id=\"toast\" class=\"toast toast-success\">
+        <svg class=\"toast-icon\" viewBox=\"0 0 24 24\">
+            <path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"></path>
+            <polyline points=\"22 4 12 14.01 9 11.01\"></polyline>
+        </svg>
+        <div class=\"toast-content\">
+            <h4>¡Gracias por tu compromiso!</h4>
+            <p>Juntos haremos de Iztapalapa un lugar más limpio.</p>
+        </div>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Form submission
+        const form = document.getElementById('commitmentForm');
+        const successMessage = document.getElementById('successMessage');
+        const toast = document.getElementById('toast');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Hide form and show success message
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            
+            // Hide toast after 3 seconds
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+            
+            // Reset form after 5 seconds
+            setTimeout(() => {
+                form.reset();
+                form.style.display = 'block';
+                successMessage.style.display = 'none';
+            }, 5000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>"
