@@ -2,35 +2,147 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Sitio Estético</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iztapalapa Limpia - Por un Futuro Mejor</title>
 
-    <!-- Vincular archivo CSS externo -->
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Enlace al CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<header>
-    <h1>Mi Página Estética ✨</h1>
-    <p>Todo corregido y funcionando</p>
-</header>
+    <div class="progress-bar" id="progressBar"></div>
 
-<div class="contenedor">
-    <div class="caja">
-        <h2>Sección 1</h2>
-        <p>Texto de ejemplo con estilo correcto.</p>
-    </div>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                🌿 Iztapalapa Limpia
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#problema">Problema</a></li>
+                <li><a href="#soluciones">Soluciones</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="caja">
-        <h2>Sección 2</h2>
-        <p>Todo el diseño, colores y efectos ya funcionan.</p>
-    </div>
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Un Iztapalapa Más Limpio es Posible</h1>
+            <p>Juntos podemos transformar nuestra comunidad en un lugar más saludable, limpio y próspero para todos.</p>
+            <a href="#soluciones" class="btn">Descubre Cómo Ayudar</a>
+        </div>
+    </section>
 
-    <div class="caja">
-        <h2>Sección 3</h2>
-        <p>Si quieres agregar más contenido, solo copia una caja más.</p>
-    </div>
-</div>
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">🗑️</div>
+                    <div class="stat-number">13,000</div>
+                    <div class="stat-label">Toneladas diarias de basura</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💧</div>
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Coladeras obstruidas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">🏘️</div>
+                    <div class="stat-number">8 de 10</div>
+                    <div class="stat-label">Calles afectadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">👥</div>
+                    <div class="stat-number">1.8M</div>
+                    <div class="stat-label">Habitantes impactados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema -->
+    <section id="problema">
+        <div class="container">
+            <div class="section-title">
+                <h2>El <span class="highlight">Problema</span> es Real</h2>
+                <p>La acumulación de basura en las calles tiene consecuencias graves para toda nuestra comunidad</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/flagged/photo-1572213426852-0e4ed8f41ff6?w=800&q=80" alt="Contaminación">
+                        <span class="card-badge">Crítico</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Contaminación Ambiental</h3>
+                        <p>Los residuos plásticos y orgánicos contaminan el suelo, agua y aire, generando un impacto ambiental devastador que afecta la salud de todos.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1605600659908-0ef719419d41?w=800&q=80" alt="Inundaciones">
+                        <span class="card-badge">Urgente</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Inundaciones Severas</h3>
+                        <p>La basura obstruye el sistema de drenaje, causando inundaciones que dañan hogares y negocios durante cada temporada de lluvias.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="https://images.pexels.com/photos/128421/pexels-photo-128421.jpeg?w=800&q=80" alt="Deterioro">
+                        <span class="card-badge">Importante</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Deterioro Urbano</h3>
+                        <p>Las calles sucias reducen la calidad de vida, afectan el valor de las propiedades y proyectan una mala imagen de nuestra alcaldía.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Más secciones... (todo lo demás sigue igual) -->
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Iztapalapa Limpia</h3>
+                    <p>Una iniciativa ciudadana comprometida con el bienestar de nuestra comunidad y el medio ambiente.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">▶️</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Enlaces</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#problema">Problema</a></li>
+                        <li><a href="#soluciones">Soluciones</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Archivo JS externo -->
+    <script src="script.js"></script>
 
 </body>
 </html>
